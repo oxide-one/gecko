@@ -1,0 +1,5 @@
+# For the love of god do not add certificates. Even if they will never be used
+*.ca
+*.crt
+*.cert
+*.key
