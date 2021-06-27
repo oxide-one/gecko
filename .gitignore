@@ -1,5 +1,8 @@
 # For the love of god do not add certificates. Even if they will never be used
 *.ca
+*.csr
+*.cer
+*.pem
 *.crt
 *.cert
 *.key
