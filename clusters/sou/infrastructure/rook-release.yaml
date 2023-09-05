@@ -4,6 +4,8 @@ metadata:
   name: rook-ceph
   namespace: rook-ceph
 spec:
+  install:
+    createNamespace: true
   interval: 5m
   chart:
     spec:
