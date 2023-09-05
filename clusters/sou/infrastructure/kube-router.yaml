@@ -1,0 +1,16 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: kube-router
+  namespace: flux-system
+spec:
+  interval: 30m0s
+  path: ./infrastructure/kube-router
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: mainline
+  targetNamespace: kube-system
+  timeout: 3m0s
+  wait: true

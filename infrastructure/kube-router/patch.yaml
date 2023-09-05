@@ -1,0 +1,20 @@
+spec:
+  template:
+    spec:
+      volumes:
+      - hostPath:
+          path: /opt/cni/bin
+          type: ""
+        name: cni-plugin
+      initContainers:
+        - command:
+          - /install-cni.sh
+          image: ghcr.io/siderolabs/install-cni:v1.5.0
+          imagePullPolicy: IfNotPresent
+          name: install-cni-sidero
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /host/opt/cni/bin/
+            name: cni-plugin
