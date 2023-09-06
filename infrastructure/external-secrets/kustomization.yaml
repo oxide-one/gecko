@@ -1,3 +1,4 @@
 resources:
 - serviceaccount.yaml
 - vault-rbac.yaml
+- serviceaccount-token.yaml
