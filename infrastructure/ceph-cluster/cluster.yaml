@@ -253,17 +253,17 @@ spec:
         devices:
           - name: "/dev/disk/by-id/nvme-SAMSUNG_MZ1LW960HMJP-000MV_S3E4NX0J701640"
             config:
-              osdsPerDevice: 5
+              osdsPerDevice: "5"
       - name: compute-amd-02
         devices:
           - name: "/dev/disk/by-id/nvme-SAMSUNG_MZ1LW960HMJP-000MV_S3E4NB0J800484"
             config:
-              osdsPerDevice: 5
+              osdsPerDevice: "5"
       - name: compute-amd-03
         devices:
           - name: "/dev/disk/by-id/nvme-SAMSUNG_MZ1LW960HMJP-000MV_S3E4NX0J701512"
             config:
-              osdsPerDevice: 5
+              osdsPerDevice: "5"
     # nodes:
     #   - name: "172.17.4.201"
     #     devices: # specific devices to use for storage can be specified for each node
