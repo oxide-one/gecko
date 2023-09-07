@@ -1,5 +1,5 @@
 resources:
-- serviceaccount.yaml
-- vault-rbac.yaml
-- serviceaccount-token.yaml
+# - serviceaccount.yaml
+# - vault-rbac.yaml
+# - serviceaccount-token.yaml
 - clustersecretstore.yaml
