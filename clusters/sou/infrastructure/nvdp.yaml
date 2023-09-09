@@ -17,5 +17,5 @@ spec:
         name: nvdp
         namespace: flux-system
       interval: 1m
-  # values:
-  #   replicaCount: 2
+  values:
+    runtimeClassName: nvidia
