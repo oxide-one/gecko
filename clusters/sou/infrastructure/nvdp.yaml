@@ -19,3 +19,5 @@ spec:
       interval: 1m
   values:
     runtimeClassName: nvidia
+    nodeSelector:
+      gpu: nvidia
