@@ -1,3 +1,4 @@
 resources:
 - cluster.yaml
 - cephblockpool.yaml
+- storageclass.yaml
