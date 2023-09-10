@@ -1,0 +1,16 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: ceph-cluster
+  namespace: flux-system
+spec:
+  interval: 5m0s
+  path: ./infrastructure/kubelet-serving-cert-approver
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: mainline
+  targetNamespace: kube-system
+  timeout: 10m
+  wait: false
