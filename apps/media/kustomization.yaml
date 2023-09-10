@@ -1,0 +1,6 @@
+resources:
+- plex
+- namespace.yaml
+commonLabels:
+  app-type: media
+namespace: media

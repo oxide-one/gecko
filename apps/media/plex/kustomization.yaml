@@ -1,0 +1,6 @@
+commonLabels:
+  app: plex
+namespace: media
+resources:
+- deployment.yaml
+- pvc.yaml

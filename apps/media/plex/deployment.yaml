@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: plex
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    spec:
+      nodeSelector:
+        gpu: nvidia
+      hostNetwork: true
+      containers:
+        - env:
+            - name: PGID
+              value: "1000"
+            - name: PUID
+              value: "1000"
+            - name: TZ
+              value: Europe/London
+            - name: VERSION
+              value: docker
+          image: lscr.io/linuxserver/plex:latest
+          name: plex
+          resources: {}
+          volumeMounts:
+            - mountPath: /config
+              name: plex-config
+            - mountPath: /tv
+              subPath: tv
+              name: tv
+            - mountPath: /movies
+              name: movies
+              subPath: movies
+            - mountPath: /anime
+              subPath: anime
+              name: remote
+      restartPolicy: Always
+      volumes:
+        - name: plex-config
+          persistentVolumeClaim:
+            claimName: plex-config
+        - name: remote
+          nfs:
+            server: netstore.core.sou.oxide.one
+            path: /media
+ 
+status: {}
