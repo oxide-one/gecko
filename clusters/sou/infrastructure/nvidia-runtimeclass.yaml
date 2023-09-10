@@ -10,6 +10,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: mainline
-  targetNamespace: nvdp
+  targetNamespace: kube-system
   timeout: 3m0s
   wait: true

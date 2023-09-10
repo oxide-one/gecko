@@ -29,9 +29,9 @@ spec:
               name: plex-config
             - mountPath: /tv
               subPath: tv
-              name: tv
+              name: remote
             - mountPath: /movies
-              name: movies
+              name: remote
               subPath: movies
             - mountPath: /anime
               subPath: anime
