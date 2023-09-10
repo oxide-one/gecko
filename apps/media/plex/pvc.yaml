@@ -3,6 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: plex-config
 spec:
+  storageClassName: "ceph-nvme"
   accessModes:
     - ReadWriteOnce
   resources:

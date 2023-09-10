@@ -8,6 +8,7 @@ spec:
     type: Recreate
   template:
     spec:
+      runtimeClassName: nvidia
       nodeSelector:
         gpu: nvidia
       hostNetwork: true
@@ -23,7 +24,9 @@ spec:
               value: docker
           image: lscr.io/linuxserver/plex:latest
           name: plex
-          resources: {}
+          resources:
+            limits:
+              nvidia.com/gpu: 1 # 
           volumeMounts:
             - mountPath: /config
               name: plex-config
