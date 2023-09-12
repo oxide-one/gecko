@@ -1,0 +1,17 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: monitoring
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  path: ./infrastructure/metrics
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: mainline
+  targetNamespace: monitoring
+  timeout: 10m
+  validation: server
+  wait: true
