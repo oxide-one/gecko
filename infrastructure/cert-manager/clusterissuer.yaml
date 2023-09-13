@@ -4,8 +4,10 @@ metadata:
   name: cloudflare
   namespace: cert-manager
 spec:
-  email: okami@doubledash.org
   acme:
+    email: okami@doubledash.org
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef: cloudflare-secretkey
     solvers:
     - dns01:
         cloudflare:
