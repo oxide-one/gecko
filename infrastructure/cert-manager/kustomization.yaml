@@ -1,0 +1,4 @@
+resources:
+- clusterissuer.yaml
+- externalsecret.yaml
+- secret.yaml
