@@ -10,6 +10,7 @@ spec:
   interval: 5m
   chart:
     spec:
+    # 
       chart: nvidia-device-plugin
       #version: '4.0.x'
       sourceRef:
