@@ -21,3 +21,19 @@ spec:
     extraArgs:
       - --dns01-recursive-nameservers-only
       - --dns01-recursive-nameservers="8.8.8.8:53\,1.1.1.1:53"
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: cert-manager-components
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  path: ./infrastructure/cert-manager
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: mainline
+  targetNamespace: cert-manager
+  timeout: 3m0s
+  #wait: true
