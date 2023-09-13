@@ -5,8 +5,8 @@ metadata:
   namespace: flux-system
 spec:
   targetNamespace: kube-system
-  install:
-    createNamespace: true  
+  # install:
+  #   createNamespace: true  
   interval: 5m
   chart:
     spec:
