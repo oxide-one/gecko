@@ -1,0 +1,6 @@
+resources:
+- https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+- https://github.com/prometheus-operator/kube-prometheus
+
+commonLabels:
+  component: metrics

@@ -4,6 +4,7 @@ metadata:
   name: cloudflare
   namespace: cert-manager
 spec:
+  email: okami@doubledash.org
   acme:
     solvers:
     - dns01:
