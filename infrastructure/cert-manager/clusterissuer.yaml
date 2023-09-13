@@ -7,7 +7,8 @@ spec:
   acme:
     email: okami@doubledash.org
     server: https://acme-v02.api.letsencrypt.org/directory
-    privateKeySecretRef: cloudflare-secretkey
+    privateKeySecretRef: 
+      name: cloudflare-accountkey
     solvers:
     - dns01:
         cloudflare:
