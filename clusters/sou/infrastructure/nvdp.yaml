@@ -4,9 +4,9 @@ metadata:
   name: nvdp
   namespace: flux-system
 spec:
-  targetNamespace: kube-system
-  # install:
-  #   createNamespace: true  
+  targetNamespace: nvdp
+  install:
+    createNamespace: true  
   interval: 5m
   chart:
     spec:
