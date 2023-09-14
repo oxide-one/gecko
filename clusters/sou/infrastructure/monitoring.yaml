@@ -11,7 +11,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: kube-prometheus
-  targetNamespace: monitoring
+  #targetNamespace: monitoring
   timeout: 10m
   validation: server
   wait: true

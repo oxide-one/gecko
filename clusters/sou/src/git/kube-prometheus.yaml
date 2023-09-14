@@ -9,3 +9,4 @@ spec:
   ref:
     branch: main
   url: https://github.com/prometheus-operator/kube-prometheus
+  
