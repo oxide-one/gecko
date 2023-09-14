@@ -1,0 +1,7 @@
+resources:
+- bundle.yaml
+- certificate-ca.yaml
+- certificate.yaml
+- clusterissuer-ca.yaml
+- clusterissuer.yaml
+- namespace.yaml

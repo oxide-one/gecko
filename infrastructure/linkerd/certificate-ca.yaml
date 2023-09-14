@@ -1,0 +1,16 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: linkerd-trust-anchor
+  namespace: cert-manager
+spec:
+  isCA: true
+  commonName: root.linkerd.cluster.local
+  secretName: linkerd-identity-trust-roots
+  privateKey:
+    algorithm: ECDSA
+    size: 256
+  issuerRef:
+    name: linkerd-self-signed-issuer
+    kind: ClusterIssuer
+    group: cert-manager.io
