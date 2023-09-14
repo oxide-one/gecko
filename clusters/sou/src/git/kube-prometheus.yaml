@@ -8,4 +8,4 @@ spec:
   interval: 1m0s
   ref:
     branch: main
-  url: ssh://git@github.com/prometheus-operator/kube-prometheus
+  url: https://github.com/prometheus-operator/kube-prometheus
