@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: sonarr
 spec:
+  template:
     spec:
       containers:
       - name: sonarr
@@ -15,7 +16,8 @@ spec:
           value: "1000"
         - name: PUID
           value: "1000"
-        - name: Europe/London
+        - name: TZ
+          value: Europe/London
         volumeMounts:
         - name: config
           mountPath: /config
