@@ -8,6 +8,10 @@ spec:
       containers:
       - name: searcharr
         image: toddrob/searcharr:latest
+        command: 
+          - sh 
+          - -c 
+          - "sleep infinity"
         imagePullPolicy: Always
         env:
         - name: PGID
