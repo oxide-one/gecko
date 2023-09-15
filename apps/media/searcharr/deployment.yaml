@@ -8,10 +8,6 @@ spec:
       containers:
       - name: searcharr
         image: toddrob/searcharr:latest
-        command: 
-          - sh 
-          - -c 
-          - "sleep infinity"
         imagePullPolicy: Always
         env:
         - name: PGID
@@ -27,15 +23,3 @@ spec:
       - name: config
         persistentVolumeClaim:
           claimName: searcharr-config
-
-# │   searcharr:
-#   25   │     container_name: searcharr
-#   26   │     image: toddrob/searcharr:latest
-#   27   │     volumes:
-#   28   │       - /ctr/searcharr/data:/app/data
-#   29   │       - /ctr/searcharr/logs:/app/logs
-#   30   │       - /ctr/searcharr/settings.py:/app/settings.py
-#   31   │ 
-#   32   │     environment:
-#   33   │       - TZ=Europe/London
-#   34   │     restart: unless-stopped
