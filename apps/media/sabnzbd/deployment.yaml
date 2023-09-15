@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: sabnzbd
 spec:
+  strategy:
+    type: Recreate
   template:
     spec:
       containers:

@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: searcharr
 spec:
+  strategy:
+    type: Recreate
   template:
     spec:
       containers:
@@ -18,7 +20,14 @@ spec:
           value: Europe/London
         volumeMounts:
         - name: config
-          mountPath: /app
+          mountPath: /app/data
+          subPath: data
+        - name: config
+          mountPath: /app/logs
+          subPath: logs
+        - name: config
+          mountPath: /app/settings.py
+          subPath: settings.py
       volumes:
       - name: config
         persistentVolumeClaim:
