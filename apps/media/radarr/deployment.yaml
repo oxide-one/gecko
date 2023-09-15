@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: radarr
+spec:
+    spec:
+      containers:
+      - name: radarr
+        image: lscr.io/linuxserver/radarr
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 7878
+        env:
+        - name: PGID
+          value: "1000"
+        - name: PUID
+          value: "1000"
+        - name: Europe/London
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        - name: data
+          mountPath: /data
+      volumes:
+      - name: config
+        persistentVolumeClaim:
+          claimName: radarr-config
+      - name: data
+        nfs:
+          server: netstore.core.sou.oxide.one
+          path: /media

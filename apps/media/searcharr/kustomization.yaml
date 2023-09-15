@@ -1,7 +1,7 @@
 commonLabels:
-  app: plex
+  app: searcharr
+  media: searcharr
 namespace: media
 resources:
 - deployment.yaml
 - pvc.yaml
-- service.yaml

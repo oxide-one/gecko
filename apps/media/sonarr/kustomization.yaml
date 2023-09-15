@@ -1,5 +1,6 @@
 commonLabels:
-  app: plex
+  app: sonarr
+  media: tv
 namespace: media
 resources:
 - deployment.yaml

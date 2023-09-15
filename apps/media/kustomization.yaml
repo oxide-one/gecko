@@ -1,6 +1,8 @@
 resources:
 - plex
 - namespace.yaml
-commonLabels:
-  app-type: media
+- radarr
+- sonarr
+- sabnzbd
+- searcharr
 namespace: media

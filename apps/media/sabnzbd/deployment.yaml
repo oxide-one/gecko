@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sabnzbd
+spec:
+    spec:
+      containers:
+      - name: sabnzbd
+        image: lscr.io/linuxserver/sabnzbd
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PGID
+          value: "1000"
+        - name: PUID
+          value: "1000"
+        - name: Europe/London
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        - name: data
+          mountPath: /downloads
+      volumes:
+      - name: config
+        persistentVolumeClaim:
+          claimName: sabnzbd-config
+      - name: data
+        nfs:
+          server: netstore.core.sou.oxide.one
+          path: /media

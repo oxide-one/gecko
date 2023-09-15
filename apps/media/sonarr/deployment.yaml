@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sonarr
+spec:
+    spec:
+      containers:
+      - name: sonarr
+        image: lscr.io/linuxserver/sonarr
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8989
+        env:
+        - name: PGID
+          value: "1000"
+        - name: PUID
+          value: "1000"
+        - name: Europe/London
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        - name: data
+          mountPath: /data
+      volumes:
+      - name: config
+        persistentVolumeClaim:
+          claimName: sonarr-config
+      - name: data
+        nfs:
+          server: netstore.core.sou.oxide.one
+          path: /media

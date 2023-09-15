@@ -1,6 +1,8 @@
 commonLabels:
-  app: plex
+  app: radarr
+  media: movies
 namespace: media
+namePrefix: test
 resources:
 - deployment.yaml
 - pvc.yaml

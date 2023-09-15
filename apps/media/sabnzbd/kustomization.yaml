@@ -1,5 +1,6 @@
 commonLabels:
-  app: plex
+  app: sabnzbd
+  media: nzb
 namespace: media
 resources:
 - deployment.yaml
