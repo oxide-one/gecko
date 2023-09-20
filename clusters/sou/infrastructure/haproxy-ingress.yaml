@@ -39,6 +39,7 @@ spec:
       publishService:
         enabled: true
       service:
+        clusterIP: 10.110.0.5
         externalIPs: 
           - 145.40.188.100
         type: ClusterIP
