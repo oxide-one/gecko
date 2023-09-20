@@ -28,6 +28,17 @@ patches:
                 path: /opt/cni/bin
                 type: ""
               name: cni-plugin
+            containers:
+              - name: kube-router
+                args:
+                - "--run-router=true"
+                - "--run-firewall=true"
+                - "--run-service-proxy=true"
+                - "--bgp-graceful-restart=true"
+                - "--kubeconfig=/var/lib/kube-router/kubeconfig"
+                - "--peer-router-asns=65010"
+                - "--peer-router-ips=10.0.5.1"
+                - "--router-id=65015"
             initContainers:
               - command:
                 - /install-cni.sh
