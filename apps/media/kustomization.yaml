@@ -5,4 +5,5 @@ resources:
 - sonarr
 - sabnzbd
 - searcharr
+- ingress.yaml
 namespace: media

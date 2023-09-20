@@ -1,0 +1,40 @@
+
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    # add an annotation indicating the issuer to use.
+    cert-manager.io/cluster-issuer: cloudflare
+  name: media
+  namespace: media
+spec:
+  rules:
+  - host: media.oxide.one
+    http:
+      paths:
+      - pathType: Prefix
+        path: /movies/
+        backend:
+          service:
+            name: radarr
+            port:
+              number: 7878
+      - pathType: Prefix
+        path: /tv/
+        backend:
+          service:
+            name: sonarr
+            port:
+              number: 8989
+      - pathType: Prefix
+        path: /download/
+        backend:
+          service:
+            name: sabnzbd
+            port:
+              number: 8080
+  tls: # < placing a host in the TLS config will determine what ends up in the cert's subjectAltNames
+  - hosts:
+    - media.oxide.one
+    secretName: media-ingress
