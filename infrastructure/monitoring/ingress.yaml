@@ -10,31 +10,25 @@ metadata:
   namespace: monitoring
 spec:
   rules:
-  - host: grafana.oxide.one
+  - host: monitoring.oxide.one
     http:
       paths:
       - pathType: Prefix
-        path: /
+        path: /grafana/
         backend:
           service:
             name: grafana
             port:
               number: 3000
-  - host: alertmanager.oxide.one
-    http:
-      paths:
       - pathType: Prefix
-        path: /
+        path: /prometheus/
         backend:
           service:
             name: prometheus-k8s
             port:
               number: 9090
-  - host: prometheus.oxide.one
-    http:
-      paths:
       - pathType: Prefix
-        path: /
+        path: /alertmanager/
         backend:
             service:
               name: alertmanager-main
@@ -42,7 +36,5 @@ spec:
                 number: 8080
   tls: # < placing a host in the TLS config will determine what ends up in the cert's subjectAltNames
   - hosts:
-    - prometheus.oxide.one
-    - alertmanager.oxide.one
-    - prometheus.oxide.one
+    - monitoring.oxide.one
     secretName: monitoring-ingress
