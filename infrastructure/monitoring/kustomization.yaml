@@ -3,9 +3,13 @@ resources:
 - https://github.com/prometheus-operator/kube-prometheus
 - ingress.yaml
 - networkpolicy.yaml
-- grafana-config.yaml
 
 patches:
+  - target:
+      version: v1
+      kind: Secret
+      name: grafana-config
+    path: grafana-config.yaml
   - target: 
       kind: Alertmanager
       name: main
