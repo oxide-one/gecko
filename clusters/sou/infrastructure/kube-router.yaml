@@ -13,4 +13,4 @@ spec:
     name: mainline
   targetNamespace: kube-system
   timeout: 3m0s
-  wait: true
+  #wait: true

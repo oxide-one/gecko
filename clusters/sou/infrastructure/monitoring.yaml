@@ -14,4 +14,4 @@ spec:
   targetNamespace: monitoring
   timeout: 10m
   validation: server
-  wait: true
+  #wait: true
