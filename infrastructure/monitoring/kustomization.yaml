@@ -1,5 +1,28 @@
 resources:
 #- https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+- https://github.com/prometheus-operator/kube-prometheus
 - ingress.yaml
 - networkpolicy.yaml
+- grafana-config.yaml
 
+patches:
+  - target: 
+      kind: Alertmanager
+      name: main
+    patch: |-
+      apiVersion: monitoring.coreos.com/v1
+      kind: Alertmanager
+      metadata:
+        name: main
+      spec:
+        externalUrl: https://monitoring.oxide.one/alertmanager/
+  - target: 
+      kind: Prometheus
+      name: k8s
+    patch: |-
+      apiVersion: monitoring.coreos.com/v1
+      kind: Prometheus
+      metadata:
+        name: k8s
+      spec:
+        externalUrl: https://monitoring.oxide.one/prometheus/
