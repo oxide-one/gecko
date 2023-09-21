@@ -33,7 +33,7 @@ spec:
             service:
               name: alertmanager-main
               port:
-                number: 8080
+                number: 9093
   tls: # < placing a host in the TLS config will determine what ends up in the cert's subjectAltNames
   - hosts:
     - monitoring.oxide.one

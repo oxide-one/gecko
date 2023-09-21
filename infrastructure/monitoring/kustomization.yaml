@@ -29,3 +29,4 @@ patches:
         name: k8s
       spec:
         externalUrl: https://monitoring.oxide.one/prometheus/
+        routePrefix: /prometheus/
