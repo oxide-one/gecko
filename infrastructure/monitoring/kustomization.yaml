@@ -1,5 +1,6 @@
 resources:
-- https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+#- https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+- ingress.yaml
 
 commonLabels:
   component: metrics

@@ -15,3 +15,20 @@ spec:
   timeout: 10m
   validation: server
   wait: true
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: kube-prometheus-extras
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  path: ./infrastructure/monitoring
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: mainline
+  #targetNamespace: monitoring
+  timeout: 10m
+  validation: server
+  wait: true
