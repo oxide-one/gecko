@@ -1,0 +1,8 @@
+resources:
+- external-secret.yaml
+- service.yaml
+- deployment.yaml
+- servicemonitor.yaml
+commonLabels:
+  collector: mikrotik
+namespace: monitoring

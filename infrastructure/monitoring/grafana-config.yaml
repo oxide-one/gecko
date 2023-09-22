@@ -11,7 +11,7 @@ metadata:
 stringData:
   grafana.ini: |
     [date_formats]
-    default_timezone = UTC
+    default_timezone = Europe/London
     [server]
     domain = monitoring.oxide.one
     root_url = %(protocol)s://%(domain)s:%(http_port)s/grafana/

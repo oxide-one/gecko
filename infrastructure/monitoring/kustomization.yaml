@@ -2,6 +2,7 @@ resources:
 - https://github.com/prometheus-operator/kube-prometheus
 - ingress.yaml
 - networkpolicy.yaml
+- mikrotik
 #namespace: monitoring
 patches:
   - target:
