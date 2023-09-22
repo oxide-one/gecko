@@ -13,9 +13,17 @@ spec:
       labels:
         app.kubernetes.io/component: mktxp
     spec:
+      volumes:
+      - name: mktxp
+        secret:
+          secretName: mktxp
       containers:
       - name: mktxp
         image: ghcr.io/akpw/mktxp:latest
         ports:
         - containerPort: 49090
           name: prometheus
+        volumeMounts:
+        - name: mktxp
+          readOnly: true
+          mountPath: "/root/mktxp/"
