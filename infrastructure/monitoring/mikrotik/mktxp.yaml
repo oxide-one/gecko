@@ -16,7 +16,7 @@ spec:
       volumes:
       - name: mktxp
         secret:
-          secretName: mktxp
+          secretName: mktxp-config
       containers:
       - name: mktxp
         image: ghcr.io/akpw/mktxp:latest
