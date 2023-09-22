@@ -8,3 +8,4 @@ spec:
   ports:
   - port: 49090
     targetPort: 49090
+    name: prometheus
