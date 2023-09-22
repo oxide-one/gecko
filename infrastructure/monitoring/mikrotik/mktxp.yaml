@@ -26,4 +26,4 @@ spec:
         volumeMounts:
         - name: mktxp
           readOnly: true
-          mountPath: "/root/mktxp/"
+          mountPath: "/home/mktxp/mktxp/"
