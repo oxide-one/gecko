@@ -1,7 +1,7 @@
 resources:
 - external-secret.yaml
 - service.yaml
-- deployment.yaml
+- mktxp.yaml
 - servicemonitor.yaml
 commonLabels:
   collector: mikrotik
