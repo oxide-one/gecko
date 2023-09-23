@@ -20,6 +20,10 @@ spec:
       protocol: TCP
     - port: 9094
       protocol: UDP
+    - port: 9093
+      protocol: TCP
+    - port: 9093
+      protocol: UDP
   podSelector:
     matchLabels:
       app.kubernetes.io/component: alert-router
