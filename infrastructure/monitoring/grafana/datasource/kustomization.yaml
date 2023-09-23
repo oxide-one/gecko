@@ -1,0 +1,3 @@
+resources:
+- alertmanager.yaml
+- prometheus.yaml

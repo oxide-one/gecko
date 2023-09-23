@@ -7,9 +7,11 @@ spec:
     matchLabels:
       dashboards: "grafana"
   datasource:
-    name: prometheus
+    name: Prometheus
     type: prometheus
     access: proxy
     url: http://prometheus-k8s:9090
     isDefault: true
     editable: false
+    jsonData:
+       manageAlerts: true

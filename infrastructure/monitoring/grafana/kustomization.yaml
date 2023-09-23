@@ -1,4 +1,4 @@
 namespace: monitoring
 resources:
-- datasource.yaml
+- datasource
 - grafana.yaml

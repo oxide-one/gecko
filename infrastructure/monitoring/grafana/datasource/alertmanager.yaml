@@ -1,0 +1,19 @@
+apiVersion: grafana.integreatly.org/v1beta1
+kind: GrafanaDatasource
+metadata:
+  name: alertmanager
+spec:
+  instanceSelector:
+    matchLabels:
+      dashboards: "grafana"
+  datasource:
+    name: Alertmanager
+    type: alertmanager
+    access: proxy
+    url: http://alertmanager-main:9093
+    editable: false
+    jsonData:
+          # Valid options for implementation include mimir, cortex and prometheus
+          implementation: prometheus
+          # Whether or not Grafana should send alert instances to this Alertmanager
+          handleGrafanaManagedAlerts: false
