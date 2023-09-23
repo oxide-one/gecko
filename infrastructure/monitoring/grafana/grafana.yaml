@@ -6,6 +6,10 @@ metadata:
   labels:
     dashboards: "grafana"
 spec:
+  deployment:
+    metadata:
+      labels:
+        app.kubernetes.io/name: grafana
   config:
     log:
       mode: "console"
