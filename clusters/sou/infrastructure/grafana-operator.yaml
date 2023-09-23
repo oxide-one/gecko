@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m0s
-  path: ./overlays/cluster_scoped
+  path: ./overlays/namespace_scoped
   prune: true
   sourceRef:
     kind: OCIRepository
