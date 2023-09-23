@@ -10,7 +10,7 @@ spec:
     name: Alertmanager
     type: alertmanager
     access: proxy
-    url: http://alertmanager-main:9093
+    url: http://alertmanager-main:9093/alertmanager
     editable: false
     jsonData:
           # Valid options for implementation include mimir, cortex and prometheus
