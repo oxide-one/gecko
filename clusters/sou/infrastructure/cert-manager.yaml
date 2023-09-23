@@ -20,7 +20,7 @@ spec:
     installCRDs: true
     extraArgs:
       - --dns01-recursive-nameservers-only
-      - --dns01-recursive-nameservers="8.8.8.8:53,1.1.1.1:53"
+      - --dns01-recursive-nameservers=8.8.8.8:53,1.1.1.1:53
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
