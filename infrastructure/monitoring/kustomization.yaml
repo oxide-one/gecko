@@ -3,6 +3,7 @@ resources:
 - ingress.yaml
 - networkpolicy.yaml
 - mikrotik
+- grafana
 #namespace: monitoring
   # - target:
   #     version: v1
