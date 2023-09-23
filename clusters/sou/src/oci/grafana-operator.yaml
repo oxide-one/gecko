@@ -1,0 +1,11 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: OCIRepository
+metadata:
+  name: grafana-operator
+  namespace: flux-system
+spec:
+  interval: 5m0s
+  url: oci://ghcr.io/grafana-operator/kustomize/grafana-operator
+  ref:
+    tag: v5.4.1

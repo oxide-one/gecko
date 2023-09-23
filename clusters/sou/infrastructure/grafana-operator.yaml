@@ -1,0 +1,15 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: grafana-operator
+  namespace: flux-system
+spec:
+  interval: 5m0s
+  path: ./deploy/overlays/cluster_scoped
+  prune: true
+  sourceRef:
+    kind: OCIRepository
+    name: grafana-operator
+  targetNamespace: monitoring
+  timeout: 3m0s
+  #wait: true
