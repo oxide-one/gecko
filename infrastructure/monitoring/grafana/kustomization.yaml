@@ -1,5 +1,6 @@
 namespace: monitoring
 resources:
 - datasource
+- dashboards
 - grafana.yaml
 - networkpolicy.yaml
