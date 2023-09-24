@@ -3,6 +3,9 @@ kind: GrafanaDashboard
 metadata:
   name: grafanadashboard-from-grafana
 spec:
+  plugins:
+    - name: flant-statusmap-panel
+      version: "0.5.1"
   folder: "Infrastructure"
   instanceSelector:
     matchLabels:

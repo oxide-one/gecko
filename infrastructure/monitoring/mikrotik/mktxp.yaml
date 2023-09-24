@@ -13,6 +13,10 @@ spec:
       labels:
         app.kubernetes.io/component: mktxp
     spec:
+      hostAliases:
+        - ip: 10.0.11.11
+          hostnames:
+          - synthwave.mgmt.sou.oxide.one
       volumes:
       - name: mktxp
         secret:
