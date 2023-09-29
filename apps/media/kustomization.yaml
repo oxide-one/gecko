@@ -6,4 +6,6 @@ resources:
 - sabnzbd
 - searcharr
 - ingress.yaml
+- pv.yaml
+- pvc.yaml
 namespace: media

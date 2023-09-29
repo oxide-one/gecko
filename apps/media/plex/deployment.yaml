@@ -44,8 +44,7 @@ spec:
           persistentVolumeClaim:
             claimName: plex-config
         - name: remote
-          nfs:
-            server: netstore.core.sou.oxide.one
-            path: /media
+          persistentVolumeClaim:
+            claimName: media
  
 status: {}

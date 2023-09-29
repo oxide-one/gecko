@@ -30,6 +30,5 @@ spec:
         persistentVolumeClaim:
           claimName: radarr-config
       - name: data
-        nfs:
-          server: netstore.core.sou.oxide.one
-          path: /media
+        persistentVolumeClaim:
+          claimName: media

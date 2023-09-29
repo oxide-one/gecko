@@ -30,6 +30,5 @@ spec:
         persistentVolumeClaim:
           claimName: sonarr-config
       - name: data
-        nfs:
-          server: netstore.core.sou.oxide.one
-          path: /media
+        persistentVolumeClaim:
+          claimName: media
