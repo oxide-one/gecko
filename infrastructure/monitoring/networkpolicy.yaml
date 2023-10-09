@@ -83,3 +83,20 @@ spec:
   policyTypes:
   - Egress
   - Ingress
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: prometheus-k8s-ingress
+  namespace: monitoring
+spec:
+  egress:
+  - {}
+  ingress:
+  - {}
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/component: mktxp
+  policyTypes:
+  - Egress
+  - Ingress

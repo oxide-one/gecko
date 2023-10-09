@@ -4,6 +4,8 @@ resources:
 - networkpolicy.yaml
 - mikrotik
 - grafana
+- alertmanager-config.yaml
+- discord-externalsecret.yaml
 #namespace: monitoring
   # - target:
   #     version: v1
@@ -19,6 +21,9 @@ patches:
     spec:
       externalUrl: https://monitoring.oxide.one/alertmanager/
       routePrefix: /alertmanager
+      alertmanagerConfigSelector:
+        matchLabels:
+          alertmanager: main
   target:
     kind: Alertmanager
     name: main
