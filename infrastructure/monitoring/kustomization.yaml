@@ -19,11 +19,11 @@ patches:
     metadata:
       name: main
     spec:
-      externalUrl: https://monitoring.oxide.one/alertmanager/
-      routePrefix: /alertmanager
+      externalUrl: /alertmanager/
       alertmanagerConfigSelector:
         matchLabels:
           alertmanager: main
+#      routePrefix: /alertmanager
   target:
     kind: Alertmanager
     name: main
@@ -33,8 +33,15 @@ patches:
     metadata:
       name: k8s
     spec:
-      externalUrl: https://monitoring.oxide.one/prometheus
-      routePrefix: /prometheus
+      alerting:
+        alertmanagers:
+        - apiVersion: v2
+          pathPrefix: /alertmanager/
+          name: alertmanager-main
+          namespace: monitoring
+          port: web
+      externalUrl: /prometheus/
+#      routePrefix: /prometheus
   target:
     kind: Prometheus
     name: k8s
